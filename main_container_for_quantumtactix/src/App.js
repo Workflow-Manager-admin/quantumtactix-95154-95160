@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Game from './components/Game';
 
 function App() {
   return (
@@ -8,28 +9,28 @@ function App() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
             <div className="logo">
-              <span className="logo-symbol">*</span> KAVIA AI
+              <span className="logo-symbol">*</span> QuantumTactix
             </div>
-            <button className="btn">Template Button</button>
+            <div className="tagline">Multi-dimensional Tic-Tac-Toe</div>
           </div>
         </div>
       </nav>
 
       <main>
         <div className="container">
-          <div className="hero">
-            <div className="subtitle">AI Workflow Manager Template</div>
-            
-            <h1 className="title">main_container_for_quantumtactix</h1>
-            
-            <div className="description">
-              Start building your application.
-            </div>
-            
-            <button className="btn btn-large">Button</button>
+          <div className="game-container">
+            <Game />
           </div>
         </div>
       </main>
+      
+      <footer>
+        <div className="container">
+          <div className="footer-content">
+            <p>QuantumTactix &copy; {new Date().getFullYear()} - Powered by KAVIA AI</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

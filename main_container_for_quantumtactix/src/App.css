@@ -109,7 +109,39 @@ body {
   background-color: #FF8B4D;
 }
 
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .btn-large {
   padding: 12px 24px;
   font-size: 1.1rem;
+}
+
+/* Game container styles */
+.game-container {
+  padding: 40px 0;
+  width: 100%;
+}
+
+/* Tagline style */
+.tagline {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Footer styles */
+footer {
+  margin-top: auto;
+  padding: 24px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }

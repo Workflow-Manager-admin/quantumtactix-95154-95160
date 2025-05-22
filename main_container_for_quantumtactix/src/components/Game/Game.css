@@ -1,0 +1,282 @@
+/* QuantumTactix Game Styles */
+:root {
+  --cell-size: 70px;
+  --grid-gap: 8px;
+  --layer-spacing: 30px;
+  --player-x-color: #41b0e8;
+  --player-o-color: #e84186;
+  --cell-bg-color: rgba(255, 255, 255, 0.05);
+  --cell-hover-color: rgba(255, 255, 255, 0.1);
+  --cell-border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Main game container */
+.quantum-tactix-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Game header */
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.game-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--kavia-orange);
+}
+
+.game-status {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Game content area */
+.game-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .game-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Player indicators */
+.player-X {
+  color: var(--player-x-color);
+  font-weight: bold;
+}
+
+.player-O {
+  color: var(--player-o-color);
+  font-weight: bold;
+}
+
+/* Game Board */
+.game-board-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .game-board-container {
+    width: 60%;
+  }
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layer-spacing);
+  align-items: center;
+}
+
+/* Layer styles */
+.game-layer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layer-indicator {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--kavia-orange);
+}
+
+.game-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap);
+}
+
+.game-row {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+/* Cell styles */
+.game-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background: var(--cell-bg-color);
+  border: 1px solid var(--cell-border-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--cell-size) * 0.5);
+  font-weight: bold;
+  position: relative;
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.game-cell.playable {
+  cursor: pointer;
+}
+
+.game-cell.playable:hover {
+  background: var(--cell-hover-color);
+}
+
+/* Cell preview (shows on hover) */
+.cell-preview {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.game-cell.playable:hover .cell-preview {
+  opacity: 0.3;
+}
+
+/* Game Controls */
+.game-controls {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+@media (min-width: 768px) {
+  .game-controls {
+    width: 40%;
+  }
+}
+
+.control-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.control-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.control-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--kavia-orange);
+}
+
+.control-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Control buttons */
+.control-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.control-btn {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Configuration controls */
+.config-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.config-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.config-group input {
+  width: 60px;
+  padding: 0.25rem;
+  background-color: var(--kavia-dark);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.config-group button {
+  margin-top: 0.5rem;
+  align-self: flex-end;
+}
+
+/* Statistics */
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+.stat-item.total {
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Rules section */
+.rules-container {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.rules-container ul {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.rules-container li {
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  :root {
+    --cell-size: 50px;
+    --grid-gap: 5px;
+  }
+  
+  .quantum-tactix-game {
+    padding: 1rem 0.5rem;
+  }
+  
+  .game-header h1 {
+    font-size: 2rem;
+  }
+  
+  .control-btn {
+    min-width: 100%;
+  }
+}
